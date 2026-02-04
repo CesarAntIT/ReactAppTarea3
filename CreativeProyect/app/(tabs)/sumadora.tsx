@@ -63,7 +63,9 @@ const styles = StyleSheet.create({
     inputs: {
         backgroundColor: 'white',
         fontSize: 25,
-        margin: 20
+        margin: 20,
+        padding: 20,
+        borderRadius: 10
     },
     text:{
         textAlign: 'center',
