@@ -117,6 +117,9 @@ class NumeroALetras {
   DobleDigito(numero: string){
     const valorNumero = parseInt(numero);
 
+    if (numero === "00" || numero === "0"){
+        return ""
+    }
     if (isNaN(valorNumero)){
         return ("Valor ingresado no es un número")
     }
@@ -171,7 +174,7 @@ class NumeroALetras {
         case "1":
             if (trueNum === 100 )
                 return this.CienA900[0]
-                res = res + this.CienA900[1] + this.DobleDigito(OpNum.slice(1))
+            res = res + this.CienA900[1] + this.DobleDigito(OpNum.slice(1))
             return res;
         case "2":
             res = res + this.CienA900[2] + this.DobleDigito(OpNum.slice(1))
@@ -202,20 +205,32 @@ class NumeroALetras {
 
   }
 
+  MilArriba(numero: string){
+    let res = "";
+    const AboveHundred = numero.slice(0,-3);
+    const BelowHundred = numero.slice(-3);
+
+    if (AboveHundred === '1')
+        res = res+ " mil " + this.Operacion(BelowHundred);
+    else if (AboveHundred.length <= 3)
+        res = res + this.Operacion(AboveHundred) + " mil " + this.Operacion(BelowHundred);
+
+    return res;
+
+  }
+
   Operacion(numero: string){
     const opNum = parseInt(numero)
     if (isNaN(opNum))
         return ("Dato Ingresado No es Un Numero")
     
-    switch(numero.length){
-        case 1:
-            return this.DobleDigito(numero);
-        case 2: 
-            return this.DobleDigito(numero);
-        case 3:
-            return this.TripleDigitio(numero);
-        default:
-            return "Numero no Soportado (Mayor a Un Millón)"
+    if (opNum.toString().length <=2)
+            return this.DobleDigito(opNum.toString());
+    else if (opNum.toString().length <=3)
+            return this.TripleDigitio(opNum.toString());
+    else if (opNum.toString().length > 3)
+            return this.MilArriba(opNum.toString());
+    else
+            return "Numero no Soportado (mayor a un millón)"
     }
   }
-}
