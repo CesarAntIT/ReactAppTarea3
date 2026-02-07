@@ -14,7 +14,7 @@ export default function Videoviewer(){
                 <YoutubePlayer
                     height={200}
                     width={350}
-                    videoId={''}
+                    videoId={'1fDxeAUe4o4'}
                 />
             </View>
 
@@ -23,7 +23,7 @@ export default function Videoviewer(){
                     Código QR del Vídeo en YT
                 </Text>
                 <Image
-                    source={require('../../assets/images/react-logo.png')}
+                    source={require('../../assets/images/videoQR.png')}
                     style={{
                         height: 200,
                         width: 200

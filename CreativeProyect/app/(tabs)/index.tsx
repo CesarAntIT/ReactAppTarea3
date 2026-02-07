@@ -7,7 +7,7 @@ export default function Index() {
       <View style={styles.card}>
         <Text style={{fontSize:20, fontWeight:'700', fontFamily: 'Arial'}}>Presentación</Text>
         <Image 
-        source={require('../../assets/images/android-icon-background.png')}
+        source={require('../../assets/images/Foto2x2~2.jpg')}
         style={styles.photo}
       ></Image>
         <View style={{flexDirection: 'row'}}>
