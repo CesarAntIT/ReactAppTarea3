@@ -7,6 +7,7 @@ export default function TabLayout(){
             <Tabs.Screen name = "sumadora" options={{title: 'Sumadora'}}/>
             <Tabs.Screen name="tablamulti" options={{title: 'Tabla'}}/>
             <Tabs.Screen name="numletter" options={{title: 'Numero a Letra'}}/>
+            <Tabs.Screen name="videoviewer" options={{title: 'Video Exp'}}/>
         </Tabs>
     )
 }
